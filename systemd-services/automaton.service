@@ -1,0 +1,12 @@
+[Unit]
+Description=Automaton service
+After=network.target
+[Service]
+#User=automaton
+ExecStartPre=/bin/mkdir -p /var/run/automaton
+ExecStartPre=/bin/chown -R root:root /var/run/automaton
+ExecStart=/opt/homeAutoServer/automaton.py /etc/automaton/conf.d/ /etc/automaton/scripts/ /var/run/automaton/automaton.pid
+Restart=always
+PermissionsStartOnly=true
+[Install]
+WantedBy=multi-user.target

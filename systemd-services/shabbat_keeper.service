@@ -1,0 +1,13 @@
+[Unit]
+Description=Shabbat Keeper service
+After=network.target
+[Service]
+#User=shabbat_keeper
+ExecStartPre=-/bin/mkdir -p /var/run/shabbat_keeper
+ExecStartPre=-/bin/chown -R shabbat_keeper:shabbat_keeper /var/run/shabbat_keeper
+ExecStartPre=-/bin/rm /tmp/shabbat_times.dat
+ExecStart=/opt/homeAutoServer/shabbat_keeper.py /etc/automaton/conf.d/ /etc/automaton/scripts/ /var/run/shabbat_keeper/shabbat_keeper.pid
+Restart=always
+PermissionsStartOnly=true
+[Install]
+WantedBy=multi-user.target
