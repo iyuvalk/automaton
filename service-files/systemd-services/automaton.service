@@ -4,7 +4,7 @@ After=network.target
 [Service]
 #User=automaton
 ExecStartPre=docker rm -f automaton
-ExecStart=docker run --name automaton -v <scripts_path>:/etc/automaton/scripts -v <config_path>:/etc/automaton/conf.d -e TELEGRAM_BOT_SECRET_KEY=<FILL THIS IN WITH YOUR BOT> automaton
+ExecStart=docker run --name automaton -v <scripts_path>:/etc/automaton/scripts -v <config_path>:/etc/automaton/conf.d -e TELEGRAM_BOT_SECRET_KEY=<FILL THIS IN WITH YOUR BOT> artifexil/automaton
 Restart=always
 PermissionsStartOnly=true
 [Install]
