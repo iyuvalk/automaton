@@ -240,7 +240,7 @@ ANSWER_FILE=ANSWER_FILE
 SCRIPTS_PATH=SCRIPTS_PATH
 print('Loading...(ANSWER_FILE=' + ANSWER_FILE + ', SCRIPTS_PATH=' + SCRIPTS_PATH + ')')
 syslog.syslog("[" + str(os.getpid()) + "]: Loading... (ANSWER_FILE=" + ANSWER_FILE + ", SCRIPTS_PATH=" + SCRIPTS_PATH + ")")
-bot = telepot.Bot('256307282:AAFrwOjDWCNhdW91k7MUqxQpsvsc2YWUbFk')
+bot = telepot.Bot(os.getenv("TELEGRAM_BOT_SECRET_KEY", None))
 bot.message_loop(handle)
 print('I am listening ...')
 syslog.syslog("[" + str(os.getpid()) + "]: Loaded. Listening... (v" + str(VER)  + " - " + subprocess.check_output("md5sum " + sys.argv[0] + " | awk '{print $1}'", shell=True).decode().strip() + ")")
