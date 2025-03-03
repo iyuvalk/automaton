@@ -92,9 +92,10 @@ def handleSingleAuthorizedMsg(confLine, chat_id, command):
         log_message(chat_id=chat_id, level=logging.INFO, method=method_name, message="Launching '" + filename + "'...")
         try:
             res=subprocess.check_output(filename + " " + str(chat_id) + " '" + command.strip(' ') + "' '" + confLine.strip(' ') + "'", shell=True).decode()
-            bot.sendMessage(chat_id, res)
+            if res is not None and len(res.strip()) > 0:
+                bot.sendMessage(chat_id, res)
         except telepot.exception.TelegramError as e:
-            log_message(chat_id=chat_id, level=logging.WARN, method=method_name, message="Failed to launch '" + filename + "' due to the following Telegram exception: " + str(e.description) + " (error code: " + str(e.error_cod) +")")
+            log_message(chat_id=chat_id, level=logging.WARN, method=method_name, message="Failed to launch '" + filename + "' due to the following Telegram exception: " + str(e.description) + " (error code: " + str(e.error_code) +")")
         except:
             log_message(chat_id=chat_id, level=logging.WARN, method=method_name, message="Failed to launch '" + filename + "' due to the following exception: " + str(sys.exc_info()[0]))
             return
