@@ -1,0 +1,11 @@
+# Use this file to set the needed responses from the "automaton" telegram bot.
+# The "automaton" bot can be used to respond to commands with text or even start scripts
+#
+# The format of this file is as follows:
+# command | response text | script to launch before sending response (if this script exits with exit code other than 0 the message won't be sent) | script to launch after sending response
+/time | The current time is: || getTime.py
+/chatid | This is current chat ID is: || getChatId
+/help | The following commands are available: || help
+/h | The following commands are available: || help
+/help | The following commands are available: || help
+/start | The following commands are available: || help

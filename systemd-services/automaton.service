@@ -3,9 +3,8 @@ Description=Automaton service
 After=network.target
 [Service]
 #User=automaton
-ExecStartPre=/bin/mkdir -p /var/run/automaton
-ExecStartPre=/bin/chown -R root:root /var/run/automaton
-ExecStart=/opt/automaton/automaton.py /etc/automaton/conf.d/ /etc/automaton/scripts/ /var/run/automaton/automaton.pid
+ExecStartPre=docker rm -f automaton
+ExecStart=docker run --name automaton -v <scripts_path>:/etc/automaton/scripts -v <config_path>:/etc/automaton/conf.d -e TELEGRAM_BOT_SECRET_KEY=<FILL THIS IN WITH YOUR BOT> automaton
 Restart=always
 PermissionsStartOnly=true
 [Install]

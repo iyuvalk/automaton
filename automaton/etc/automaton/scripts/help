@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat /etc/automaton/conf.d/answers.dict | grep -v '^#' |  cut -d\| -f1 | sed 's/{$PIPE}/|/g'
