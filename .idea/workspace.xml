@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8cde4f0-372a-485c-b06f-443e40b3355a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automaton.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/automaton/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/automaton/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automaton/automaton.py" beforeDir="false" afterPath="$PROJECT_DIR$/automaton/automaton.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automaton/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/automaton/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-files/systemd-services/automaton.service" beforeDir="false" afterPath="$PROJECT_DIR$/service-files/systemd-services/automaton.service" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
